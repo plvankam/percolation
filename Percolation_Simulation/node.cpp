@@ -40,7 +40,7 @@ void Node::map_neighbors(unsigned int N,
     // RIGHT
     if((index + 1) %  N)                 r_neighbor   = &node_vector[index + 1];
 
-    // TOP
+    // TOP15
     if((index + N) <  (N * N))           t_neighbor   = &node_vector[index + N];
     // top_neighbor    => top_root
     else                                 t_neighbor   = &node_vector[TOP_ROOT_INDEX];
@@ -66,6 +66,11 @@ void Node::join(Node* node)
     new_root->child_nodes.insert(new_root->child_nodes.end(), 
                                  root->child_nodes.begin(), 
                                  root->child_nodes.end());
+    // TODO 
+    // change root for each new node in vector
+    //
+
+    // then clear 
     root->child_nodes.clear();
 
 }
